@@ -2,7 +2,6 @@
 
 This project aims to predict whether or not a song becomes a "hit" on Billboard's Top 100 list based on song attribute information taken from Spotify (e.g. Danceability, Valence, Instrumentallness, Tempo, etc).
 
-## About
 
 ## Data
 
@@ -25,6 +24,30 @@ The author of the dataset defines a "hit" vs. a "flop" based on the following cr
 
 ## EDA
 
+From initial EDA, the features with the strongest positive correlations with the target (hit/value) appear to be song's **danceability** and **valence**. On the opposite end of hte spectrum, a song's **instrumentallness** and **acousticness** exhibit a strong negative correlation with the target.
+
+![plot](./images/audio-features-1.png)
+
+![plot](./images/dist-features-1.png)
+
+![plot](./images/hit-correlation.png)
+
 ## Data Models
+
+This project used 3 different data models to predict hit songs:
+- Logistic Regression
+- Decision Tree
+- Random Forest
+
+Of the models tested, Random Forest yielded the best results.
+
+![plot](./images/model-results.png)
+
+
+## Conclusions
+- Logistic Regressions not so great with many variables, not the best with categorical variables
+- Decision Tree better than LR – very clear to interpret- but puts a heavy emphasis on one feature (instrumentalness)
+- Random Forest produced the best outcome with predictions, harder to interpret given the nature of the model
+- Hit songs are influenced a lot by level of “instrumentalness” – needs to have words! Acousticness and danceability also seem to play a role
 
 
